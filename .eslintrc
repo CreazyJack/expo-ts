@@ -1,0 +1,24 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
+  "root": true,
+  "extends": ["@react-native-community", "prettier"],
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint", "simple-import-sort"],
+  "rules": {
+    "no-console": 1,
+    "prefer-const": 2,
+    "@typescript-eslint/consistent-type-imports": 1,
+    "simple-import-sort/imports": 1,
+    "simple-import-sort/exports": 1,
+    "react-hooks/exhaustive-deps": 0,
+    "react/no-unstable-nested-components": 0,
+    "react/react-in-jsx-scope": 0,
+    "@typescript-eslint/no-unused-vars": 2,
+    "react/jsx-key": 2, //在数组或迭代器中验证JSX具有key属性
+    "react/no-array-index-key": 1 //防止在数组中遍历中使用数组key做索引
+  }
+}
