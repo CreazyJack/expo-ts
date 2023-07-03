@@ -1,5 +1,6 @@
 import { useNavigation } from '@react-navigation/native';
-import { ScrollView, StyleSheet, Text, TextProps, View } from 'react-native';
+import type { TextProps } from 'react-native';
+import { ScrollView, StyleSheet, Text, View } from 'react-native';
 
 const Item = (props: TextProps) => <Text style={styles.text} {...props} />;
 
