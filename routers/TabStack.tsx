@@ -2,8 +2,8 @@ import type { BottomTabNavigationOptions } from '@react-navigation/bottom-tabs';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
-import Animation from '../screens/Animation';
-import Settings from '../screens/Settings';
+import PanGesture from '../screens/PanGesture';
+import ReAnimated from '../screens/Reanimated';
 
 const Tab = createBottomTabNavigator<Obj>();
 
@@ -24,18 +24,18 @@ export default () => {
   return (
     <Tab.Navigator screenOptions={screenOptions}>
       <Tab.Screen
-        name='Animation'
-        component={Animation}
+        name='Reanimated'
+        component={ReAnimated}
         options={{
           tabBarIcon: (props) => <TabBarIcon {...props} name='animation' />,
         }}
       />
 
       <Tab.Screen
-        name='Settings'
-        component={Settings}
+        name='PanGesture'
+        component={PanGesture}
         options={{
-          tabBarIcon: (props) => <TabBarIcon {...props} name='settings' />,
+          tabBarIcon: (props) => <TabBarIcon {...props} name='gesture' />,
         }}
       />
     </Tab.Navigator>

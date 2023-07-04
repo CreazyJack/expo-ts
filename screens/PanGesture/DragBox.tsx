@@ -2,8 +2,9 @@ import { Dimensions, StyleSheet, View } from 'react-native';
 import { Gesture, GestureDetector } from 'react-native-gesture-handler';
 import Animated, { useAnimatedStyle, useSharedValue, withSpring } from 'react-native-reanimated';
 
-const { height, width } = Dimensions.get('window');
-const SIZE = width * 0.2;
+const { width } = Dimensions.get('window');
+const SIZE = width * 0.16;
+const WIDTH = width * 0.8;
 
 export default () => {
   const translateX = useSharedValue(0);
@@ -23,7 +24,7 @@ export default () => {
     })
     .onEnd(() => {
       const distance = Math.sqrt(translateX.value ** 2 + translateY.value ** 2);
-      if (distance < width / 2 + SIZE / 2) {
+      if (distance < WIDTH / 2 + SIZE / 2) {
         translateX.value = withSpring(0, { damping: 20 });
         translateY.value = withSpring(0, { damping: 20 });
       }
@@ -48,16 +49,16 @@ export default () => {
 
 const styles = StyleSheet.create({
   container: {
-    height: height * 0.6,
+    flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
   },
   circle: {
-    height: width,
-    width: width,
+    height: WIDTH,
+    width: WIDTH,
     justifyContent: 'center',
     alignItems: 'center',
-    borderRadius: width,
+    borderRadius: WIDTH,
     borderColor: '#eb4d4b',
     borderWidth: 4,
   },
